@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="border p-4 rounded" style="width: 300px;">
+        <h2 class="text-center mb-4">Login</h2>
+        <form action="/login" method="post">
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuario:</label>
+                <input type="text" class="form-control" id="usuario" name="usuario" required />
+            </div>
+            <div class="mb-3">
+                <label for="contrasena" class="form-label">Contraseña:</label>
+                <input type="password" class="form-control" id="contrasena" name="contrasena" required />
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+            </div>
+        </form>
+
+        <div th:if="${error}" class="alert alert-danger mt-3" role="alert">
+            <p>Credenciales incorrectas. Inténtalo de nuevo.</p>
+        </div>
+    </div>
+</body>
+</html>
